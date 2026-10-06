@@ -1,0 +1,19 @@
+# Base de datos y copias: NUNCA se publican (llevan datos de la familia)
+data/
+*.db
+*.db-wal
+*.db-shm
+
+# Certificados y claves
+certs/
+*.pem
+*.key
+*.crt
+
+# Entorno
+.venv/
+__pycache__/
+*.pyc
+graphify-out/
+.glm_*
+.env

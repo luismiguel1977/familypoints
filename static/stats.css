@@ -1,0 +1,29 @@
+/* ===== Estadísticas (solo padre) ===== */
+#statsRoot h2 { font: 800 23px 'Baloo 2', cursive; color: var(--ink); margin: 4px 0 10px; display: flex; align-items: center; gap: 8px; }
+.stats-filtros { display: flex; flex-direction: column; gap: 8px; margin: 12px 0; }
+.chips { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
+.chip { border: none; border-radius: 999px; padding: 9px 16px; background: var(--blue-soft); color: var(--blue); font: 600 15px 'Nunito', sans-serif; white-space: nowrap; cursor: pointer; }
+.chip.activo { background: var(--blue); color: #fff; }
+.kpis { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 10px; }
+.kpi { background: var(--card); border-radius: 20px; padding: 15px; box-shadow: var(--shadow); text-align: center; }
+.kpi .num { font: 800 28px 'Baloo 2', cursive; color: var(--gold); }
+.kpi .lbl { font: 600 13px 'Nunito', sans-serif; color: var(--muted); }
+.stats-frase { text-align: center; font: 600 15px 'Nunito', sans-serif; color: #475569; margin: 12px 0; }
+.card-title { font: 700 18px 'Baloo 2', cursive; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+.hijo-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.hijo-emoji { font-size: 32px; }
+.hijo-head strong { font-size: 16px; }
+.hijo-head small { font: 600 13px 'Nunito', sans-serif; color: var(--muted); }
+.hijo-saldo { margin-left: auto; font: 800 24px 'Baloo 2', cursive; color: var(--gold); }
+.barra-cump { height: 9px; border-radius: 999px; background: var(--blue-soft); overflow: hidden; margin: 6px 0 12px; }
+.barra-cump > div { height: 100%; border-radius: 999px; background: var(--green); }
+.chips-cat { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; }
+.chip-cat { background: #F1F5F9; border-radius: 999px; padding: 6px 11px; font: 600 13px 'Nunito', sans-serif; }
+.table-wrap { overflow-x: auto; }
+.tabla { width: 100%; border-collapse: collapse; font: 600 14px 'Nunito', sans-serif; }
+.tabla th, .tabla td { padding: 10px 8px; text-align: center; border-bottom: 1px solid var(--line); }
+.tabla th { color: var(--muted); font-weight: 700; font-size: 14px; }
+.tabla td.cero { color: #CBD5E1; }
+.tabla tr.total td { font-weight: 800; color: var(--blue); border-top: 2px solid var(--blue-soft); }
+.tabla td.tarea-nom { text-align: left; }
+.minibar { height: 7px; border-radius: 999px; background: var(--gold-soft); min-width: 3px; }

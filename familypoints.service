@@ -1,0 +1,20 @@
+[Unit]
+Description=FamilyPoints - banca de puntos familiar
+After=network.target
+
+[Service]
+Type=simple
+# Ajusta estas rutas y el usuario a tu instalacion
+WorkingDirectory=/opt/familypoints
+Environment=FAMILYPOINTS_PORT=8890
+Environment=FAMILYPOINTS_HOST=0.0.0.0
+ExecStart=/opt/familypoints/.venv/bin/python /opt/familypoints/app.py
+Restart=on-failure
+RestartSec=3
+User=familypoints
+NoNewPrivileges=true
+ProtectSystem=full
+ReadWritePaths=/opt/familypoints/data
+
+[Install]
+WantedBy=multi-user.target

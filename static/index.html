@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#2563EB">
+<title>FamilyPoints</title>
+<link rel="stylesheet" href="fonts.css?v=1">
+<link rel="stylesheet" href="stats.css?v=2">
+<link rel="stylesheet" href="style.css?v=50">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="FamilyPts">
+</head>
+<body>
+<div id="app">
+
+  <div id="panel-login" class="screen">
+    <div class="login-hero">
+      <div class="logo">🏠</div>
+      <h1>FamilyPoints</h1>
+      <p class="sub">La app de puntos de la familia</p>
+    </div>
+    <div class="login-form">
+      <div id="login-members" class="member-picker"></div>
+      <div class="pin-row">
+        <label for="pin">Tu PIN</label>
+        <input type="password" id="pin" inputmode="numeric" autocomplete="off" placeholder="····">
+        <button id="btn-login" class="btn btn-primary">Entrar</button>
+        <p id="login-error" class="error" hidden></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="panel-app" class="screen" hidden>
+    <header class="topbar">
+      <div class="topbar-left">
+        <span class="app-logo">🏠</span>
+        <span class="app-title">FamilyPoints</span>
+      </div>
+      <div class="topbar-right">
+        <span id="me-saldo" class="saldo-chip"></span>
+        <button id="btn-logout" class="icon-btn" title="Salir">🚪</button>
+      </div>
+    </header>
+
+    <div id="offline-banner" class="offline-banner" hidden></div>
+    <main id="content"></main>
+
+    <nav class="bottomnav">
+      <button class="nav-item active" data-tab="inicio" onclick="setTab('inicio')">
+        <span class="nav-ico">🏠</span><span class="nav-lbl">Inicio</span>
+      </button>
+      <button class="nav-item" data-tab="tareas" onclick="setTab('tareas')">
+        <span class="nav-ico">✅</span><span class="nav-lbl">Tareas</span>
+      </button>
+      <button class="nav-item" data-tab="canjes" onclick="setTab('canjes')">
+        <span class="nav-ico">🎁</span><span class="nav-lbl">Canjes</span>
+      </button>
+      <button class="nav-item" data-tab="ocio" onclick="setTab('ocio')">
+        <span class="nav-ico">⏱️</span><span class="nav-lbl">Ocio</span>
+      </button>
+      <button class="nav-item" data-tab="ajustes" onclick="setTab('ajustes')">
+        <span class="nav-ico">⚙️</span><span class="nav-lbl">Ajustes</span>
+        <span id="nav-pend" class="nav-badge" hidden></span>
+      </button>
+      <button class="nav-item role-padre" data-tab="estadisticas" onclick="setTab('estadisticas')" hidden>
+        <span class="nav-ico">📊</span><span class="nav-lbl">Stats</span>
+      </button>
+    </nav>
+
+    <button id="fab" class="fab" onclick="onFab()">+</button>
+  </div>
+
+</div>
+
+<div id="toast" class="toast" hidden></div>
+<script src="app.js?v=62"></script>
+<script>
+// Registro del Service Worker (PWA instalable). Solo en contexto seguro (HTTPS/localhost).
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch(() => {});
+  });
+}
+</script>
+</body>
+</html>
